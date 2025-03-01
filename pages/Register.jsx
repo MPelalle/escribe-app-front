@@ -9,6 +9,7 @@ const Register = () => {
         username: "",
         email: "",
         password: "",
+        confirmPassword: "",
     });
 
     const [errors, setErrors] = useState({});
@@ -22,6 +23,8 @@ const Register = () => {
         if (!formData.email.includes("@")) errors.email = "Correo inválido";
         if (formData.password.length < 6)
             errors.password = "La contraseña debe tener al menos 6 caracteres";
+        if (formData.password !== formData.confirmPassword)
+            errors.confirmPassword = "Las contraseñas no coinciden";
 
         setErrors(errors);
         return Object.keys(errors).length === 0;
@@ -42,8 +45,6 @@ const Register = () => {
         } finally {
             setLoading(false);
         }
-        
-
     };
 
     return (
@@ -82,6 +83,16 @@ const Register = () => {
                     />
                     {errors.password && <p>{errors.password}</p>}
 
+                    <input
+                        type="password"
+                        placeholder="Repetir Contraseña"
+                        value={formData.confirmPassword}
+                        onChange={(e) =>
+                            setFormData({ ...formData, confirmPassword: e.target.value })
+                        }
+                    />
+                    {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
+
                     {serverError && <p className="error">{serverError}</p>}
 
                     <button type="submit" disabled={loading}>
@@ -94,3 +105,4 @@ const Register = () => {
 };
 
 export default Register;
+
