@@ -6,7 +6,7 @@ const Home = () => {
     <div className='background-photo'>
 
       <div className='home'>
-      <img src="../../styles/assets/logo-app.png" alt="" className='logo-home'/>
+      
         <h1 className='title'>¡Bienvenido a Escribe APP!</h1>
         <p className='subtitle'>Una app perfecta para escribir :]</p>
         <p className='subtitle'>Crea y edita tus notas con facilidad. Primero registrate o inicia sesión.</p>
