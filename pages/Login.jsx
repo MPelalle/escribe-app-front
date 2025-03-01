@@ -38,7 +38,7 @@ export default function Login() {
       <VideoBackground/>
       <div className="container">
         <h2>Login</h2>
-        <p className="subtitle">Nota: al hacer Login, recargar la pagina para ver los cambios!</p>
+        <p className="subtitle fix-subtitle">Nota: al hacer Login, recargar la pagina para ver los cambios!</p>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
