@@ -147,6 +147,9 @@ li button:first-of-type:hover {
 
 
 @media (max-width: 480px) {
+    .title {
+        padding-top: 70px;
+    }
     form {
         width: 90%;
         height: auto;
@@ -156,6 +159,9 @@ li button:first-of-type:hover {
     input, textarea {
         font-size: 0.9rem;
         padding: 8px;
+        text-align: center;
+        background-color: #44444400;
+        color: #ccc;
     }
 
     button {
